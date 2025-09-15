@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a8a9a4-6f6d-4333-b775-c2bb36807308" name="Changes" comment="6" />
+    <list default="true" id="a6a8a9a4-6f6d-4333-b775-c2bb36807308" name="Changes" comment="6">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/пайтон.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/пайтон.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,46 +64,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.address.executor&quot;: &quot;Run&quot;,
-    &quot;Python.calculator_test.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.lesson_3_task_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson_3_task_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lesson_3_task_3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mailing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.smartphone.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest in test_string_utils.py.executor": "Run",
+    "Python.address.executor": "Run",
+    "Python.calculator_t.executor": "Run",
+    "Python.calculator_test.executor": "Debug",
+    "Python.lesson_3_task_1.executor": "Run",
+    "Python.lesson_3_task_2.executor": "Run",
+    "Python.lesson_3_task_3.executor": "Run",
+    "Python.mailing.executor": "Run",
+    "Python.smartphone.executor": "Run",
+    "Python.user.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "lesson4-",
+    "ignore.virus.scanning.warn.message": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="calculator_t" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="пайтон" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lesson 4" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\MSI\OneDrive\Рабочий стол\учеба\пайтон\Lesson 4\calculator_t.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="PythonConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -149,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757611915408</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="6">
+      <option name="closed" value="true" />
+      <created>1757773261666</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757773261666</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
