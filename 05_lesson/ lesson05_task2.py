@@ -23,3 +23,5 @@ driver.get("http://uitestingplayground.com/dynamicid/")
 check_input = driver.find_element(By.CSS_SELECTOR, "button.btn-primary")
 check_input.click()
 sleep(5)
+
+
