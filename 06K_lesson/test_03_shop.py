@@ -1,57 +1,31 @@
-from import pytest
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
-options = webdriver.FirefoxOptions()
-driver = webdriver.Firefox()
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture
-def test_buttons():
-    driver.get("https://www.saucedemo.com/")
-    driver.implicitly_wait(16)
-
-    user_name = driver.find_element(By.CSS_SELECTOR, 'input#user-name')
-    user_name.send_keys("standard_user")
-
-    password = driver.find_element(By.CSS_SELECTOR, 'input#password')
-    password.send_keys("secret_sauce")
-
-    check_input = driver.find_element(By.CSS_SELECTOR, "#login-button")
-    check_input.click()
-
-    shop_input_1 = driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack")
-    shop_input_1.click()
-
-    shop_input_2 = driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt")
-    shop_input_2.click()
-
-    shop_input_3 = driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie")
-    shop_input_3.click()
-
-    shopping_cart_link_input = driver.find_element(By.CSS_SELECTOR, "a.shopping_cart_link")
-    shopping_cart_link_input.click()
-
-    checkout_input = driver.find_element(By.CSS_SELECTOR, "#checkout")
-    checkout_input.click()
-
-    first_name = driver.find_element(By.CSS_SELECTOR, 'input[name="firstName"]')
-    first_name.send_keys("Надежда")
-
-    last_name = driver.find_element(By.CSS_SELECTOR, 'input[name="lastName"]')
-    last_name.send_keys("Саратовцева")
-
-    postal_code = driver.find_element(By.CSS_SELECTOR, 'input[name="postalCode"]')
-    postal_code.send_keys("403030")
-
-    continue_input = driver.find_element(By.CSS_SELECTOR, "#continue")
-    continue_input.click()
-
-    text_prise = driver.find_element(By.CSS_SELECTOR, 'div.summary_total_label').text
-    text_prise_value = float(text_prise.split("$")[1])
-    print(text_prise)
-
-#total-label = driver.find_element(By.CSS_SELECTOR, "div.summary_total_label#text").text
-    assert text_prise_value == 58.29
-
+def browser():
+    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+    yield driver
     driver.quit()
+
+def test_shop(browser):
+    browser.get("https://www.saucedemo.com/")
+    browser.find_element(By.ID, "user-name").send_keys("standard_user")
+    browser.find_element(By.ID, "password").send_keys("secret_sauce")
+    browser.find_element(By.ID, "login-button").click()
+    browser.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
+    browser.find_element(By.ID, "add-to-cart-sauce-labs-bolt-t-shirt").click()
+    browser.find_element(By.ID, "add-to-cart-sauce-labs-onesie").click()
+    browser.find_element(By.CLASS_NAME, "shopping_cart_link").click()
+    browser.find_element(By.ID, "checkout").click()
+    browser.find_element(By.ID, "first-name").send_keys("Надежда")
+    browser.find_element(By.ID, "last-name").send_keys("Саратовцева")
+    browser.find_element(By.ID, "postal-code").send_keys("403030")
+    browser.find_element(By.ID, "continue").click()
+    total = WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, "summary_total_label"))).text
+    total_value = float(total.split("$")[1])
+    assert total_value == 58.29
