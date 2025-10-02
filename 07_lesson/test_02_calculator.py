@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from pages.CalculatorPage import CalculatorPage
+from CalculatorPage import CalculatorPage
 
 
 @pytest.fixture
@@ -12,16 +12,17 @@ def driver():
     driver.quit()
 
 
-def test_calculator_complement(self):
-    self.calculator = CalculatorPage(self.calculator)
-    self.calculator.open()
-    self.calculator.set_delay('45')
-    self.calculator.click_button(self.calculator.button_7)
-    self.calculator.click_button(self.calculator.button_plus)
-    self.calculator.click_button(self.calculator.button_8)
-    self.calculator.click_button(self.calculator.button_equal)
+def test_calculator_complement(driver):
+    calculator = CalculatorPage(driver)
+    calculator.open()
+    calculator.set_delay('45')
+    calculator.click_button(calculator.button_7)
+    calculator.click_button(calculator.button_plus)
+    calculator.click_button(calculator.button_8)
+    calculator.click_button(calculator.button_equal)
 
-    self.assertEqual(self.calculator.get_result(), '15')
+
+    assert calculator.get_result() == '15'
 
 
 
