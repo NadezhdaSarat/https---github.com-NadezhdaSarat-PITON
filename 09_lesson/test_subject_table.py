@@ -7,8 +7,9 @@ db = SubjectTable(connection_string)
 def test_create_subject():
     db.create("EcologyTest")
     subjects = db.get_all()
-    found = [s for s in subjects if s["subject_title"] == "EcologyTest"
-    assert found for s in found:
+    found = [s for s in subjects if s["subject_title"] == "EcologyTest"]
+    assert found
+    for s in found:
         db.delete(s["subject_id"])
 
 def test_update_subject():
