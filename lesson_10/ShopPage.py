@@ -51,7 +51,7 @@ class MainPage:
 
     @allure.step("Посмотреть на корзину")
     def go_to_cart(self):
-        self.driver.find_element(*self.cart_btn).click()
+        self.driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
 
 
 class CartPage:
@@ -80,7 +80,7 @@ class CheckoutPage:
     def fill_last_name(self, last_name):
         self.driver.find_element(*self.last_name).send_keys(last_name)
 
-    @allure.step("Ввести в форму индекс {postal.code}")
+    @allure.step("Ввести в форму индекс {postal_code}")
     def fill_postal_code(self, postal_code):
         self.driver.find_element(*self.postal_code).send_keys(postal_code)
 

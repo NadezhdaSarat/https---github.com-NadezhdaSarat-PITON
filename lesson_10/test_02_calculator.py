@@ -21,7 +21,7 @@ def test_calculator_complement(driver):
         calculator = CalculatorPage(driver)
         calculator.open()
     with allure.step("Поставить время ожидания"):
-        calculator.set_delay('45')
+        calculator.set_delay('1')
     with allure.step("Прокликать кнопки на калькуляторе"):
         calculator.click_button(calculator.button_7)
         calculator.click_button(calculator.button_plus)
